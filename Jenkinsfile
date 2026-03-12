@@ -14,10 +14,13 @@ pipeline {
         }
 
         stage('Build & Test') {
-            steps {
-                sh 'python3 -m unittest test_app.py'
-            }
-        }
+    steps {
+        sh '''
+        pip3 install -r requirements.txt
+        python3 -m unittest test_app.py
+        '''
+    }
+}
 
         stage('SonarQube Analysis') {
             steps {
