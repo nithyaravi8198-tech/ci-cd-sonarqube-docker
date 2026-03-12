@@ -9,7 +9,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/nithyaravi8198-tech/ci-cd-sonarqube-docker.git'
+                echo "Code already checked out by Jenkins"
             }
         }
 
