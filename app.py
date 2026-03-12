@@ -1,5 +1,10 @@
-def hello():
-        print("Hello from CI/CD Pipeline with SonarQube + Docker")
+from flask import Flask
 
-        if __name__ == "__main__":
-                hello()
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello from CI/CD Pipeline with Jenkins + SonarQube + Docker!"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
