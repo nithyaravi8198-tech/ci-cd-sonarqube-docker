@@ -23,10 +23,10 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQube') {
                     sh '''
-                    sonar-scanner \
-                    -Dsonar.projectKey=ci-cd-sonarqube-docker \
-                    -Dsonar.sources=.
-                    '''
+/opt/sonar-scanner/bin/sonar-scanner \
+-Dsonar.projectKey=ci-cd-sonarqube-docker \
+-Dsonar.sources=.
+'''
                 }
             }
         }
