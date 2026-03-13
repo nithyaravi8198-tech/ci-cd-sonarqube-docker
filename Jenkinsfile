@@ -51,10 +51,13 @@ pipeline {
             }
         }
 
-        stage('Deploy Container') {
-            steps {
-                sh 'docker run -d -p 5000:5000 $DOCKER_IMAGE'
-            }
-        }
+       stage('Deploy Container') {
+    steps {
+        sh '''
+        docker rm -f app-container || true
+        docker run -d --name app-container -p 5000:5000 $DOCKER_IMAGE
+        '''
+    }
+}
     }
 }
