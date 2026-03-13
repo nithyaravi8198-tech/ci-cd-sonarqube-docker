@@ -3,7 +3,7 @@ from flask import Flask
 app = Flask(__name__)
 
 def hello():
-    return "Hello from CI/CD Pipeline with Jenkins + SonarQube + Docker!"
+    return "CI/CD Pipeline Triggered"
 
 @app.route("/")
 def home():
